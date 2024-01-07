@@ -142,7 +142,9 @@ public class Server {
                 if (fileExtension.equalsIgnoreCase("txt")) {
                     jlFileContent.setText("<html>" + new String(fileData) + "</html>");
                 } else {
-                    jlFileContent.setIcon(new ImageIcon(fileData));
+                    // jlFileContent.setIcon(new ImageIcon(fileData));
+                    jlFileContent.setIcon(new ImageIcon(
+                            new ImageIcon(fileData).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT)));
                 }
 
                 jbYes.addActionListener(new ActionListener() {
